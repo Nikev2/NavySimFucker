@@ -36,7 +36,7 @@ local LockShip = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
-local RepairShip = SpawnShip:Clone()
+local RepairShip = LockShip:Clone()
 
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
