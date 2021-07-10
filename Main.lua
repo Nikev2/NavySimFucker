@@ -90,9 +90,9 @@ UnlockShip.TextSize = 14.000
 UnlockShip.TextWrapped = true
 
 SpawnShip.MouseButton1Click:Connect(function()
-    if IsAPirate() then
+   
     game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer("Gunboat",CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
-    end
+    
 end)
 LockShip.MouseButton1Click:Connect(function()
     workspace.Ships.AMOGUS.Comms.Lock:FireServer()
