@@ -1,4 +1,4 @@
-local COREGUI = game.COREGUI
+local COREGUI = game.CoreGui
 local PARENT = nil
 local plr = game.Players.LocalPlayer
 function randomString()
