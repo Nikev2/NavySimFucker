@@ -1,5 +1,5 @@
-COREGUI = game:GetService("CoreGui")
-PARENT = nil
+local COREGUI = game.COREGUI
+local PARENT = nil
 local plr = game.Players.LocalPlayer
 function randomString()
 	local length = math.random(10,20)
