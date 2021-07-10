@@ -36,7 +36,7 @@ local LockShip = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
-local RepairShip = ShipType:Clone()
+local RepairShip = SpawnShip:Clone()
 
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
@@ -98,7 +98,7 @@ ShipType.TextSize = 14.000
 ShipType.TextWrapped = true
 RepairShip.LayoutOrder = 4
 RepairShip.Name = "RepairShip"
-RepairShip.Text = "Reapair SHip"
+RepairShip.Text = "Reapair Ship"
 RepairShip.NouseButton1Click:Connect(function()
 	local ShipData = workspace.Ships.AMOGUS:GetDescendants()
 	local Plr = game.Players.LocalPlayer
