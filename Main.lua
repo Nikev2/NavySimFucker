@@ -84,10 +84,22 @@ UnlockShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 UnlockShip.TextScaled = true
 UnlockShip.TextSize = 14.000
 UnlockShip.TextWrapped = true
+ShipType = Instance.new("TextBox")
+ShipType.Name = "ShipType"
+ShipType.Parent = ScrollingFrame
+ShipType.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShipType.Position = UDim2.new(0, 0, 0.304600835, 0)
+ShipType.Size = UDim2.new(0, 170, 0, 50)
+ShipType.Font = Enum.Font.SourceSans
+ShipType.Text = "\"Boat Type Here\""
+ShipType.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShipType.TextScaled = true
+ShipType.TextSize = 14.000
+ShipType.TextWrapped = true
 
 SpawnShip.MouseButton1Click:Connect(function()
    
-    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer("Gunboat",CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
+    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
     
 end)
 LockShip.MouseButton1Click:Connect(function()
