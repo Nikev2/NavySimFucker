@@ -47,7 +47,7 @@ frame = ScrollingFrame
 frame.Draggable = true
 frame.Active = true
 frame.Selectable = true
-
+SpawnShip.LayoutOrder = 1
 SpawnShip.Name = "SpawnShip"
 SpawnShip.Parent = ScrollingFrame
 SpawnShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -58,7 +58,7 @@ SpawnShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 SpawnShip.TextScaled = true
 SpawnShip.TextSize = 14.000
 SpawnShip.TextWrapped = true
-
+LockShip.LayoutOrder = 2
 LockShip.Name = "LockShip"
 LockShip.Parent = ScrollingFrame
 LockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,7 +72,7 @@ LockShip.TextWrapped = true
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
+UnlockShip.LayoutOrder = 3
 UnlockShip.Name = "Unlock Ship"
 UnlockShip.Parent = ScrollingFrame
 UnlockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -84,6 +84,7 @@ UnlockShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 UnlockShip.TextScaled = true
 UnlockShip.TextSize = 14.000
 UnlockShip.TextWrapped = true
+ShipType.LayoutOrder = 0
 ShipType = Instance.new("TextBox")
 ShipType.Name = "ShipType"
 ShipType.Parent = ScrollingFrame
