@@ -29,11 +29,7 @@ else
 	Main.Parent = COREGUI
 	PARENT = Main
 end
-local function IsAPirate()
-if plr.Team == 'Pirates' then
-    return plr.Team == 'Pirates'
-end
-end
+
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local SpawnShip = Instance.new("TextButton")
 local LockShip = Instance.new("TextButton")
