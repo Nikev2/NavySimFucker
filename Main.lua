@@ -108,7 +108,7 @@ RepairShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 RepairShip.TextScaled = true
 RepairShip.TextSize = 14.000
 RepairShip.TextWrapped = true
-RepairShip.NouseButton1Click:Connect(function()
+RepairShip.MouseButton1Click:Connect(function()
 	local ShipData = workspace.Ships.AMOGUS:GetDescendants()
 	local Plr = game.Players.LocalPlayer
 	local b = Plr:FindFirstChild("Backpack")
