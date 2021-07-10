@@ -33,15 +33,13 @@ local function IsAPirate()
 if plr.Team == 'Pirates' then
     return plr.Team == 'Pirates'
 end
+end
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local SpawnShip = Instance.new("TextButton")
 local LockShip = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
-frame = ScrollingFrame
-frame.Draggable = true
-frame.Active = true
-frame.Selectable = true
+
 
 
 ScrollingFrame.Parent = PARENT
