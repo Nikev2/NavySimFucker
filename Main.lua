@@ -35,7 +35,7 @@ local SpawnShip = Instance.new("TextButton")
 local LockShip = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
-
+local ShipType = Instance.new("TextBox")
 
 
 ScrollingFrame.Parent = PARENT
@@ -85,7 +85,6 @@ UnlockShip.TextScaled = true
 UnlockShip.TextSize = 14.000
 UnlockShip.TextWrapped = true
 ShipType.LayoutOrder = 0
-ShipType = Instance.new("TextBox")
 ShipType.Name = "ShipType"
 ShipType.Parent = ScrollingFrame
 ShipType.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
