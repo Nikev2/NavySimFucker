@@ -47,6 +47,10 @@ ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.Position = UDim2.new(0.0422163606, 0, 0.204582646, 0)
 ScrollingFrame.Size = UDim2.new(0, 183, 0, 351)
+frame = ScrollingFrame
+frame.Draggable = true
+frame.Active = true
+frame.Selectable = true
 
 SpawnShip.Name = "SpawnShip"
 SpawnShip.Parent = ScrollingFrame
