@@ -36,7 +36,7 @@ local LockShip = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
-
+local RepairShip = ShipType:Clone()
 
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
@@ -96,7 +96,39 @@ ShipType.TextColor3 = Color3.fromRGB(0, 0, 0)
 ShipType.TextScaled = true
 ShipType.TextSize = 14.000
 ShipType.TextWrapped = true
-
+RepairShip.LayoutOrder = 4
+RepairShip.Name = "RepairShip"
+RepairShip.Text = "Reapair SHip"
+RepairShip.NouseButton1Click:Connect(function()
+	local ShipData = workspace.Ships.AMOGUS:GetDescendants()
+	local Plr = game.Players.LocalPlayer
+	local b = Plr:FindFirstChild("Backpack")
+	local RepairT = b.Repair
+	for i, Ship in pairs(ShipData) do
+		if Ship.ClassName == "Part" then
+			RepairT.Repair.Server.Repair:FireServer(Ship)
+			print("Repaired "..(Ship.Name))
+			 elseif Ship.ClassName == "UnionOperation" then
+			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			print("Repaired "..(Ship.Name))
+			
+			elseif Ship.ClassName == "WedgePart" then
+			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			print("Repaired"..(Ship.Name))
+			
+			elseif Ship.ClassName == "CornerWedgePart" then
+			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			 print("Repaired"..(Ship.Name))
+			
+			elseif Ship.ClassName == "MeshPart" then
+			RepairT.Repair.Server.Repair:FireServer(Ship)
+			print("Repaired"..(Ship.Name))
+			
+		  
+		end
+		 
+		end
+end
 SpawnShip.MouseButton1Click:Connect(function()
    
     game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
