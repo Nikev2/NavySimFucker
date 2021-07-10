@@ -128,7 +128,7 @@ RepairShip.NouseButton1Click:Connect(function()
 		end
 		 
 		end
-end
+end)
 SpawnShip.MouseButton1Click:Connect(function()
    
     game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
