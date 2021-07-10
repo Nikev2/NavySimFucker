@@ -112,25 +112,25 @@ RepairShip.MouseButton1Click:Connect(function()
 	local ShipData = workspace.Ships.AMOGUS:GetDescendants()
 	local Plr = game.Players.LocalPlayer
 	local b = Plr:FindFirstChild("Backpack")
-	local RepairT = b.Repair
+	local RepairT = b.Repair.Server.Repair
 	for i, Ship in pairs(ShipData) do
 		if Ship.ClassName == "Part" then
-			RepairT.Repair.Server.Repair:FireServer(Ship)
+			RepairT:FireServer(Ship)
 			print("Repaired "..(Ship.Name))
 			 elseif Ship.ClassName == "UnionOperation" then
-			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			 RepairT:FireServer(Ship)
 			print("Repaired "..(Ship.Name))
 			
 			elseif Ship.ClassName == "WedgePart" then
-			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			 RepairT:FireServer(Ship)
 			print("Repaired"..(Ship.Name))
 			
 			elseif Ship.ClassName == "CornerWedgePart" then
-			 RepairT.Repair.Server.Repair:FireServer(Ship)
+			 RepairT:FireServer(Ship)
 			 print("Repaired"..(Ship.Name))
 			
 			elseif Ship.ClassName == "MeshPart" then
-			RepairT.Repair.Server.Repair:FireServer(Ship)
+			RepairT:FireServer(Ship)
 			print("Repaired"..(Ship.Name))
 			
 		  
