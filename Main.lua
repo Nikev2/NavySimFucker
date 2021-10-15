@@ -206,14 +206,7 @@ end)
 
 
 
-local PlaneFrame = Instance.new("Frame")
-PlaneFrame.Parent = PARENT
-PlaneFrame.Visible = true
-local UIListLayout2 = Instance.new("UIListLayout")
-UIListLayout2.Parent = PlaneFrame
-UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
-PlaneFrame.Size = UDim2.new(0, 122,0, 360)
-PlaneFrame.Position = UDim2.new(0.434, 0,0.145, 0)
+
 local PlaneNames = {
     "As-3A-1",
     "As-3A-3",
@@ -221,9 +214,41 @@ local PlaneNames = {
     "CB-01-A1",
     "CB-02",
 }
-for i,v in pairs(PlaneNames) do
-	wait(0.1)
-	local PlaneButton = Instance.new("TextButton")
-	PlaneButton.Size = UDim2.new(0, 122,0, 50)
-	PlaneButton.Text = v
+local SpawnPlane = Instance.new("TextButton")
+SpawnPlane.LayoutOrder = 8
+SpawnPlane.Name = "CollectGold"
+SpawnPlane.Parent = ScrollingFrame
+SpawnPlane.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpawnPlane.Size = UDim2.new(0, 170, 0, 50)
+SpawnPlane.Font = Enum.Font.SourceSans
+SpawnPlane.Text = "Spawn Plane"
+SpawnPlane.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpawnPlane.TextScaled = true
+SpawnPlane.TextSize = 14.000
+SpawnPlane.TextWrapped = true
+local PlaneNumber = Instance.new("TextBox")
+PlaneNumber.LayoutOrder = 7
+PlaneNumber.Name = "CollectGold"
+PlaneNumber.Parent = ScrollingFrame
+PlaneNumber.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlaneNumber.Size = UDim2.new(0, 170, 0, 50)
+PlaneNumber.Font = Enum.Font.SourceSans
+PlaneNumber.Text = "PlaneNumber"
+PlaneNumber.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlaneNumber.TextScaled = true
+PlaneNumber.TextSize = 14.000
+PlaneNumber.TextWrapped = true
+local TeleportToRunWay = workspace.Planes.CB02.Events.MoveToSpawnPosition
+SpawnPlane.MouseButton1Click:Connect(function()
+if PlaneNumber.Text == 1 then
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[1],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+elseif PlaneNumber.Text == 2 then
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[2],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+elseif PlaneNumber.Text == 3 then
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[3],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+elseif PlaneNumber.Text == 4 then
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[4],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+elseif PlaneNumber.Text == 5 then
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[5],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
+end)
