@@ -160,7 +160,7 @@ plantC4.Parent = ScrollingFrame
 plantC4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 plantC4.Size = UDim2.new(0, 170, 0, 50)
 plantC4.Font = Enum.Font.SourceSans
-plantC4.Text = "Spawn Ship"
+
 plantC4.TextColor3 = Color3.fromRGB(0, 0, 0)
 plantC4.TextScaled = true
 plantC4.TextSize = 14.000
