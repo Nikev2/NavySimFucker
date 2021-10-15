@@ -155,7 +155,7 @@ game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As3A1",CFrame.ne
 
 local plantC4 = Instance.new("TextButton")
 plantC4.LayoutOrder = 5
-plantC4.Name = "SpawnShip"
+plantC4.Name = "PlantC4"
 plantC4.Parent = ScrollingFrame
 plantC4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 plantC4.Size = UDim2.new(0, 170, 0, 50)
@@ -185,12 +185,12 @@ collectgold.Parent = ScrollingFrame
 collectgold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 collectgold.Size = UDim2.new(0, 170, 0, 50)
 collectgold.Font = Enum.Font.SourceSans
-collectgold.Text = "PlantC4"
+collectgold.Text = "CollectGold"
 collectgold.TextColor3 = Color3.fromRGB(0, 0, 0)
 collectgold.TextScaled = true
 collectgold.TextSize = 14.000
 collectgold.TextWrapped = true
-collectgold.mouseButton1Click:Connect(function()
+collectgold.MouseButton1Click:Connect(function()
 local VaultDestroyed = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsVaultDoorDestroyed
 local Goldbars = game:GetService("Workspace").Islands.Bank.EssentialWorkers.GoldBars
 if VaultDestroyed.Value == true then
