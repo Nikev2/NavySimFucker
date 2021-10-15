@@ -160,7 +160,7 @@ plantC4.Parent = ScrollingFrame
 plantC4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 plantC4.Size = UDim2.new(0, 170, 0, 50)
 plantC4.Font = Enum.Font.SourceSans
-
+plantC4.Text = "PlantC4"
 plantC4.TextColor3 = Color3.fromRGB(0, 0, 0)
 plantC4.TextScaled = true
 plantC4.TextSize = 14.000
@@ -178,9 +178,18 @@ plantC4.MouseButton1Click:Connect(function()
 
 
 end)
-local collectgold = UnlockShip:Clone()
+local collectgold = Instance.new("TextButton")
 collectgold.LayoutOrder = 6
-collectgold.Text = "CollectGoldBars"
+collectgold.Name = "CollectGold"
+collectgold.Parent = ScrollingFrame
+collectgold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+collectgold.Size = UDim2.new(0, 170, 0, 50)
+collectgold.Font = Enum.Font.SourceSans
+collectgold.Text = "PlantC4"
+collectgold.TextColor3 = Color3.fromRGB(0, 0, 0)
+collectgold.TextScaled = true
+collectgold.TextSize = 14.000
+collectgold.TextWrapped = true
 collectgold.mouseButton1Click:Connect(function()
 local VaultDestroyed = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsVaultDoorDestroyed
 local Goldbars = game:GetService("Workspace").Islands.Bank.EssentialWorkers.GoldBars
