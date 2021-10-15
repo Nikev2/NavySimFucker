@@ -241,19 +241,19 @@ PlaneNumber.TextWrapped = true
 local TeleportToRunWay = workspace.Planes.CB02.Events.MoveToSpawnPosition
 SpawnPlane.MouseButton1Click:Connect(function()
 if PlaneNumber.Text == 1 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[1],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 	if PlaneNumber.Text == 2 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[2],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 3 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[3],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3B-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 4 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[4],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-01-A1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 5 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer(PlaneNames[5],CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-02",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 
 end)
