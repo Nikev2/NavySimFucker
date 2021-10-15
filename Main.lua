@@ -203,3 +203,27 @@ if VaultDestroyed.Value == true then
    
 end
 end)
+
+
+
+local PlaneFrame = Instance.new("Frame")
+PlaneFrame.Parent = PARENT
+PlaneFrame.Visible = true
+local UIListLayout2 = Instance.new("UIListLayout")
+UIListLayout2.Parent = PlaneFrame
+UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+PlaneFrame.Size = UDim2.new(0, 122,0, 360)
+PlaneFrame.Position = UDim2.new(0.434, 0,0.145, 0)
+local PlaneNames = {
+    "As-3A-1",
+    "As-3A-3",
+    "As-3B-1",
+    "CB-01-A1",
+    "CB-02",
+}
+for i,v in pairs(PlaneNames) do
+	wait(0.1)
+	local PlaneButton = Instance.new("TextButton")
+	PlaneButton.Size = UDim2.new(0, 122,0, 50)
+	PlaneButton.Text = v
+end
