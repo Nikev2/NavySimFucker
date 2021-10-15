@@ -153,9 +153,18 @@ end)
 
 game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As3A1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 
-local plantC4 = UnlockShip:Clone()
-plantC4.Text = "Plant Bank C4"
+local plantC4 = Instance.new("TextButton")
 plantC4.LayoutOrder = 5
+plantC4.Name = "SpawnShip"
+plantC4.Parent = ScrollingFrame
+plantC4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+plantC4.Size = UDim2.new(0, 170, 0, 50)
+plantC4.Font = Enum.Font.SourceSans
+plantC4.Text = "Spawn Ship"
+plantC4.TextColor3 = Color3.fromRGB(0, 0, 0)
+plantC4.TextScaled = true
+plantC4.TextSize = 14.000
+plantC4.TextWrapped = true
 plantC4.MouseButton1Click:Connect(function()
 
 	local C4promt = workspace.Islands.Bank.EssentialWorkers.C4.Base.Prompt
