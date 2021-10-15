@@ -153,3 +153,33 @@ end)
 
 game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As3A1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 
+local plantC4 = UnlockShip:Clone()
+plantC4.Text = "Plant Bank C4"
+plantC4.LayoutOrder = 5
+plantC4.MouseButton1Click:Connect(function()
+
+	local C4promt = workspace.Islands.Bank.EssentialWorkers.C4.Base.Prompt
+	local VaultDestroyed = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsVaultDoorDestroyed
+	local C4Planted = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsC4Planted
+	if C4Planted.Value == false then
+		if VaultDestroyed == false then
+	 fireproximityprompt(C4promt)
+	 end
+	 end
+
+
+end)
+local collectgold = UnlockShip:Clone()
+collectgold.LayoutOrder = 6
+collectgold.Text = "CollectGoldBars"
+collectgold.mouseButton1Click:Connect(function()
+local VaultDestroyed = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsVaultDoorDestroyed
+local Goldbars = game:GetService("Workspace").Islands.Bank.EssentialWorkers.GoldBars
+if VaultDestroyed.Value == true then
+          
+	for i,v in pairs(Goldbars:GetChildren()) do
+		   fireclickdetector(v.Clicker)
+		end
+   
+end
+end)
