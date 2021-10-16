@@ -39,19 +39,7 @@ local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
 local RepairShip = Instance.new("TextButton")
-local ShipName = Instance.new("TextBox")
 
-ShipName.LayoutOrder = 10
-ShipName.Name = "ShipName"
-ShipName.Parent = ScrollingFrame
-ShipName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ShipName.Size = UDim2.new(0, 170, 0, 50)
-ShipName.Font = Enum.Font.SourceSans
-ShipName.Text = "ShipName"
-ShipName.TextColor3 = Color3.fromRGB(0, 0, 0)
-ShipName.TextScaled = true
-ShipName.TextSize = 14.000
-ShipName.TextWrapped = true
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -259,4 +247,17 @@ SpawnPlane.MouseButton1Click:Connect(function()
 
 
 end)
+local ShipName = Instance.new("TextBox")
+
+ShipName.LayoutOrder = 10
+ShipName.Name = "ShipName"
+ShipName.Parent = ScrollingFrame
+ShipName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+ShipName.Font = Enum.Font.SourceSans
+ShipName.Text = "ShipName"
+ShipName.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShipName.TextScaled = true
+ShipName.TextSize = 14.000
+ShipName.TextWrapped = true
 
