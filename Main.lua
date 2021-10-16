@@ -29,6 +29,8 @@ else
 	Main.Parent = COREGUI
 	PARENT = Main
 end
+local ShipNameVal = Instance.new("StringValue")
+ShipNameVal.Parent = ScrollingFrame
 
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local SpawnShip = Instance.new("TextButton")
@@ -37,7 +39,10 @@ local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
 local RepairShip = Instance.new("TextButton")
-
+local ShipName = Instance.new("TextBox")
+ShipName.Parent = ScrollingFrame
+ShipName.Text = "Ship Name Here"
+ShipName.LayoutOrder = 1
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -47,7 +52,7 @@ frame = ScrollingFrame
 frame.Draggable = true
 frame.Active = true
 frame.Selectable = true
-SpawnShip.LayoutOrder = 1
+SpawnShip.LayoutOrder = 2
 SpawnShip.Name = "SpawnShip"
 SpawnShip.Parent = ScrollingFrame
 SpawnShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -58,7 +63,7 @@ SpawnShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 SpawnShip.TextScaled = true
 SpawnShip.TextSize = 14.000
 SpawnShip.TextWrapped = true
-LockShip.LayoutOrder = 2
+LockShip.LayoutOrder = 3
 LockShip.Name = "LockShip"
 LockShip.Parent = ScrollingFrame
 LockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,7 +77,7 @@ LockShip.TextWrapped = true
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UnlockShip.LayoutOrder = 3
+UnlockShip.LayoutOrder = 4
 UnlockShip.Name = "Unlock Ship"
 UnlockShip.Parent = ScrollingFrame
 UnlockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -99,7 +104,7 @@ ShipType.TextWrapped = true
 RepairShip.Name = "RepairShip"
 RepairShip.Parent = ScrollingFrame
 RepairShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RepairShip.LayoutOrder = 4
+RepairShip.LayoutOrder = 5
 RepairShip.Position = UDim2.new(0.0327868834, 0, 0.0425531901, 0)
 RepairShip.Size = UDim2.new(0, 170, 0, 50)
 RepairShip.Font = Enum.Font.SourceSans
@@ -109,7 +114,7 @@ RepairShip.TextScaled = true
 RepairShip.TextSize = 14.000
 RepairShip.TextWrapped = true
 RepairShip.MouseButton1Click:Connect(function()
-	local ShipData = workspace.Ships.AMOGUS:GetDescendants()
+	local ShipData = workspace.Ships:FindFirstChild(ShipNameVal.Value):GetDescendants()
 	local Plr = game.Players.LocalPlayer
 	local b = Plr:FindFirstChild("Backpack")
 	local RepairT = b.Repair.Server.Repair
@@ -140,8 +145,8 @@ RepairShip.MouseButton1Click:Connect(function()
 end)
 SpawnShip.MouseButton1Click:Connect(function()
    
-    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),"AMOGUS")
-    
+    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),ShipName.Text)
+    ShipNameVal.Value = ShipName.Text
 end)
 LockShip.MouseButton1Click:Connect(function()
     workspace.Ships.AMOGUS.Comms.Lock:FireServer()
@@ -156,7 +161,7 @@ end)
 wait(1)
 
 local plantC4 = Instance.new("TextButton")
-plantC4.LayoutOrder = 5
+plantC4.LayoutOrder = 6
 plantC4.Name = "PlantC4"
 plantC4.Parent = ScrollingFrame
 plantC4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -181,7 +186,7 @@ plantC4.MouseButton1Click:Connect(function()
 
 end)
 local collectgold = Instance.new("TextButton")
-collectgold.LayoutOrder = 6
+collectgold.LayoutOrder = 7
 collectgold.Name = "CollectGold"
 collectgold.Parent = ScrollingFrame
 collectgold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -215,8 +220,8 @@ local PlaneNames = {
     "CB-02",
 }
 local SpawnPlane = Instance.new("TextButton")
-SpawnPlane.LayoutOrder = 8
-SpawnPlane.Name = "CollectGold"
+SpawnPlane.LayoutOrder = 9
+SpawnPlane.Name = "SpawnPlane"
 SpawnPlane.Parent = ScrollingFrame
 SpawnPlane.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SpawnPlane.Size = UDim2.new(0, 170, 0, 50)
@@ -227,8 +232,8 @@ SpawnPlane.TextScaled = true
 SpawnPlane.TextSize = 14.000
 SpawnPlane.TextWrapped = true
 local PlaneNumber = Instance.new("TextBox")
-PlaneNumber.LayoutOrder = 7
-PlaneNumber.Name = "CollectGold"
+PlaneNumber.LayoutOrder = 1
+PlaneNumber.Name = "PlaneNumber"
 PlaneNumber.Parent = ScrollingFrame
 PlaneNumber.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PlaneNumber.Size = UDim2.new(0, 170, 0, 50)
@@ -241,19 +246,20 @@ PlaneNumber.TextWrapped = true
 local TeleportToRunWay = workspace.Planes.CB02.Events.MoveToSpawnPosition
 SpawnPlane.MouseButton1Click:Connect(function()
 if PlaneNumber.Text == 1 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-1", CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 	if PlaneNumber.Text == 2 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3A-3", CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 3 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3B-1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("As-3B-1", CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 4 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-01-A1",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-01-A1", CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 if PlaneNumber.Text == 5 then
-	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-02",CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
+	game:GetService("ReplicatedStorage").Shops.BuyPlane:FireServer("CB-02", CFrame.new(249.461304, 206.78125, -5504.85596, -0.717674136, 0, 0.696379125, 0, 1, 0, -0.696379125, 0, -0.717674136))
 end
 
 end)
+
