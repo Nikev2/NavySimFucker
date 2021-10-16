@@ -41,7 +41,7 @@ local ShipType = Instance.new("TextBox")
 local RepairShip = Instance.new("TextButton")
 local ShipName = Instance.new("TextBox")
 
-ShipName.LayoutOrder = 1
+ShipName.LayoutOrder = 10
 ShipName.Name = "ShipName"
 ShipName.Parent = ScrollingFrame
 ShipName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
