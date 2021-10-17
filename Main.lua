@@ -45,6 +45,26 @@ ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.Position = UDim2.new(0.561, 0,0.145, 0)
 ScrollingFrame.Size = UDim2.new(0, 216,0, 361)
+
+function CreateGuiElement(Element, Text, Name, LayoutOrder)
+	local X = Instance.new(Element)
+	X.Parent = ScrollingFrame
+	X.Text = Text
+	X.Name = Name
+	X.LayoutOrder = LayoutOrder
+	X.Size = UDim2.new(0, 170, 0, 50)
+	X.Font = Enum.Font.SourceSans
+	X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	X.TextColor3 = Color3.fromRGB(0, 0, 0)
+	X.TextScaled = true
+	X.TextSize = 14.000
+	X.TextWrapped = true
+	return X
+end
+
+
+
+
 frame = ScrollingFrame
 frame.Draggable = true
 frame.Active = true
@@ -239,4 +259,7 @@ end
 end
 end
 UserInputService.InputBegan:Connect(Input)
+
+local Y = CreateGuiElement("TextButton", "TestSuccess", "TestButton", 8)
+Y.Text = "TestSuccess1"
 
