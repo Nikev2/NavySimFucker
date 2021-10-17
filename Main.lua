@@ -48,17 +48,17 @@ ScrollingFrame.Size = UDim2.new(0, 216,0, 361)
 
 function CreateGuiElement(Element, Text, Name, LayoutOrder)
 	local X = Instance.new(Element)
-ShipName.Parent = ScrollingFrame
-ShipName.LayoutOrder = LayoutOrder
-ShipName.Name = Name
-ShipName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ShipName.Size = UDim2.new(0, 170, 0, 50)
-ShipName.Font = Enum.Font.SourceSans
-ShipName.Text = Text
-ShipName.TextColor3 = Color3.fromRGB(0, 0, 0)
-ShipName.TextScaled = true
-ShipName.TextSize = 14.000
-ShipName.TextWrapped = true
+X.Parent = ScrollingFrame
+X.LayoutOrder = LayoutOrder
+X.Name = Name
+X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+X.Size = UDim2.new(0, 170, 0, 50)
+X.Font = Enum.Font.SourceSans
+X.Text = Text
+X.TextColor3 = Color3.fromRGB(0, 0, 0)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
 	return X
 end
 
