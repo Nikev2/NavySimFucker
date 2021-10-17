@@ -62,9 +62,7 @@ X.TextWrapped = true
 	return X
 end
 
-local Y = CreateGuiElement("TextButton", "TestSuccess", "TestButton", 8)
-print(Y.Text)
-print("done")
+
 
 
 frame = ScrollingFrame
