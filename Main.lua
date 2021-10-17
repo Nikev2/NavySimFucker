@@ -288,6 +288,7 @@ end
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 if BS() then
 	print("BackSlashWasPressed")
+	RegisterPlane()
 end
 	
 
