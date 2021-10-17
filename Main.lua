@@ -74,10 +74,16 @@ LockShip.TextWrapped = true
 
 ShipName = Instance.new("TextButton")
 ShipName.Parent = ScrollingFrame
-ShipName.Text = "ShipNameGoesHere"
 ShipName.LayoutOrder = 1
 ShipName.Name = "ShipName"
-
+ShipType.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShipType.Size = UDim2.new(0, 170, 0, 50)
+ShipType.Font = Enum.Font.SourceSans
+ShipType.Text = "Boat Name Here"
+ShipType.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShipType.TextScaled = true
+ShipType.TextSize = 14.000
+ShipType.TextWrapped = true
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
