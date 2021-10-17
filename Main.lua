@@ -49,7 +49,7 @@ frame = ScrollingFrame
 frame.Draggable = true
 frame.Active = true
 frame.Selectable = true
-SpawnShip.LayoutOrder = 2
+SpawnShip.LayoutOrder = 3
 SpawnShip.Name = "SpawnShip"
 SpawnShip.Parent = ScrollingFrame
 SpawnShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -60,7 +60,7 @@ SpawnShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 SpawnShip.TextScaled = true
 SpawnShip.TextSize = 14.000
 SpawnShip.TextWrapped = true
-LockShip.LayoutOrder = 3
+LockShip.LayoutOrder = 4
 LockShip.Name = "LockShip"
 LockShip.Parent = ScrollingFrame
 LockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,9 +72,16 @@ LockShip.TextScaled = true
 LockShip.TextSize = 14.000
 LockShip.TextWrapped = true
 
+ShipName = Instance.new("TextButton")
+ShipName.Parent = ScrollingFrame
+ShipName.Text = "ShipNameGoesHere"
+ShipName.LayoutOrder = 1
+ShipName.Name = "ShipName"
+
+
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UnlockShip.LayoutOrder = 4
+UnlockShip.LayoutOrder = 5
 UnlockShip.Name = "Unlock Ship"
 UnlockShip.Parent = ScrollingFrame
 UnlockShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -86,14 +93,14 @@ UnlockShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 UnlockShip.TextScaled = true
 UnlockShip.TextSize = 14.000
 UnlockShip.TextWrapped = true
-ShipType.LayoutOrder = 0
+ShipType.LayoutOrder = 2
 ShipType.Name = "ShipType"
 ShipType.Parent = ScrollingFrame
 ShipType.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ShipType.Position = UDim2.new(0, 0, 0.304600835, 0)
 ShipType.Size = UDim2.new(0, 170, 0, 50)
 ShipType.Font = Enum.Font.SourceSans
-ShipType.Text = "\"Boat Type Here\""
+ShipType.Text = "Boat Type Here"
 ShipType.TextColor3 = Color3.fromRGB(0, 0, 0)
 ShipType.TextScaled = true
 ShipType.TextSize = 14.000
@@ -101,7 +108,7 @@ ShipType.TextWrapped = true
 RepairShip.Name = "RepairShip"
 RepairShip.Parent = ScrollingFrame
 RepairShip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RepairShip.LayoutOrder = 5
+RepairShip.LayoutOrder = 6
 RepairShip.Position = UDim2.new(0.0327868834, 0, 0.0425531901, 0)
 RepairShip.Size = UDim2.new(0, 170, 0, 50)
 RepairShip.Font = Enum.Font.SourceSans
@@ -141,9 +148,10 @@ RepairShip.MouseButton1Click:Connect(function()
 		end
 end)
 SpawnShip.MouseButton1Click:Connect(function()
-   
-    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219),ShipName.Text)
-    ShipNameVal.Value = ShipName.Text
+	ShipNameVal.Value = ShipName.Text
+
+    game:GetService("ReplicatedStorage").Shops.BuyShip:FireServer(ShipType.Text,CFrame.new(75.2159424, 38.6900826, -5282.46729, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219), ShipNameVal.Value)
+    
 end)
 LockShip.MouseButton1Click:Connect(function()
     workspace.Ships:FindFirstChild(ShipNameVal.Value).Comms.Lock:FireServer()
