@@ -257,6 +257,24 @@ RaidA52.MouseButton1Click:Connect(function()
 	end
 end)
 
+function FakeScript()
+local Fake_Script = Instance.new("LocalScript", PARENT)
+local UIS = game:GetService("UserInputService")
+local BackSlash = Enum.KeyCode.BackSlash
+local function BS()
+	return UIS:IsKeyDown(BackSlash)
+end
+UIS.InputBegan:Connect(function(input, gameProcessedEvent)
+if BS() then
+	print("BackSlashWasPressed")
+end
+	
+
+end)
+
+
+end
+
 
 
 
