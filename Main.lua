@@ -272,6 +272,7 @@ for i,v in pairs(Planes) do
 if v.States.Owner.Value == plr.Name then
 
 Plane = v
+print(v.Parent.Name)
 print("G")
 print(v.Name)
 print(v.States.Owner.Value)
