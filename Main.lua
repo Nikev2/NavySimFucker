@@ -72,7 +72,7 @@ LockShip.TextScaled = true
 LockShip.TextSize = 14.000
 LockShip.TextWrapped = true
 
-ShipName = Instance.new("TextButton")
+ShipName = Instance.new("TextBox")
 ShipName.Parent = ScrollingFrame
 ShipName.LayoutOrder = 1
 ShipName.Name = "ShipName"
