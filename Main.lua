@@ -274,6 +274,7 @@ end)
 
 
 end
+coroutine.wrap(FakeScript)()
 
 
 
