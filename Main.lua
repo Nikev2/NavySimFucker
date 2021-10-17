@@ -239,27 +239,11 @@ if VaultDestroyed.Value == true then
    
 end
 end)
-
-
-
-local UIS = game:GetService("UserInputService")
-local plr = game.Players.LocalPlayer
-local function JKeyDown()
-return UIS:IsKeyDown(Enum.KeyCode.J)
-end
-local function Input(input, gameProcessedEvent)
-if JKeyDown() then
-	
-for i,v in pairs(workspace.Planes:GetChildren()) do
-if v.States.Owner == plr.Name then
-	v.Events.MoveToSpawnPosition:FireServer()
-end
-
-end
-end
-end
-UserInputService.InputBegan:Connect(Input)
-
 local Y = CreateGuiElement("TextButton", "TestSuccess", "TestButton", 8)
 Y.Text = "TestSuccess1"
+
+
+
+
+
 
