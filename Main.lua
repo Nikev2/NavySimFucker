@@ -48,21 +48,23 @@ ScrollingFrame.Size = UDim2.new(0, 216,0, 361)
 
 function CreateGuiElement(Element, Text, Name, LayoutOrder)
 	local X = Instance.new(Element)
-	X.Parent = ScrollingFrame
-	X.Text = Text
-	X.Name = Name
-	X.LayoutOrder = LayoutOrder
-	X.Size = UDim2.new(0, 170, 0, 50)
-	X.Font = Enum.Font.SourceSans
-	X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	X.TextColor3 = Color3.fromRGB(0, 0, 0)
-	X.TextScaled = true
-	X.TextSize = 14.000
-	X.TextWrapped = true
+ShipName.Parent = ScrollingFrame
+ShipName.LayoutOrder = LayoutOrder
+ShipName.Name = Name
+ShipName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShipName.Size = UDim2.new(0, 170, 0, 50)
+ShipName.Font = Enum.Font.SourceSans
+ShipName.Text = Text
+ShipName.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShipName.TextScaled = true
+ShipName.TextSize = 14.000
+ShipName.TextWrapped = true
 	return X
 end
 
-
+local Y = CreateGuiElement("TextButton", "TestSuccess", "TestButton", 8)
+print(Y.Text)
+print("done")
 
 
 frame = ScrollingFrame
@@ -239,8 +241,7 @@ if VaultDestroyed.Value == true then
    
 end
 end)
-local Y = CreateGuiElement("TextButton", "TestSuccess", "TestButton", 8)
-Y.Text = "TestSuccess1"
+
 
 
 
