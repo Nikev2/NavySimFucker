@@ -261,7 +261,7 @@ end)
 
 
 
-local plr = game.LocalPlayer
+local plr = game.Players.LocalPlayer
 function FakeScript()
 local Plane = nil
 local function RegisterPlane()
