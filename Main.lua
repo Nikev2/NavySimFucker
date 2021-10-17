@@ -268,11 +268,11 @@ local function RegisterPlane()
 
 local Planes = game:GetService("Workspace").Planes:GetChildren()
 for i,v in pairs(Planes) do
-	print(v.Name)
+
 if v.States.Owner.Value == "PurplePeperEater" then
 
 Plane = v
-print(v.States.Owner.Value)
+print(v.Name)
 end
 end
 
