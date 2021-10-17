@@ -238,7 +238,24 @@ if VaultDestroyed.Value == true then
 end
 end)
 
-
+local ShowPlaneShop = CreateGuiElement("TextButton", "Show Plane Shop", "ShowPlaneShop", 8)
+ShowPlaneShop.MouseButton1Click:Connect(function()
+	local PlaneGUIClicker = game:GetService("Workspace").Islands.PirateSpawn.EssentialWorkers.PlaneShop.Clicker
+	fireclickdetector(PlaneGUIClicker)
+	print("Success")
+end)
+local RaidA52 = CreateGuiElement("TextButton", "Raid A52", "RaidA52", 9)
+RaidA52.MouseButton1Click:Connect(function()
+	local Area52 = game:GetService("Workspace").Islands["Area 52"].EssentialWorkers
+	for i,v in pairs(Area52:GetDescendants()) do
+			if v.Name == "Prompt" then
+				fireproximityprompt(v, 3)
+				print(v.Name)
+				print("C4Planted")
+				 
+				end
+	end
+end)
 
 
 
