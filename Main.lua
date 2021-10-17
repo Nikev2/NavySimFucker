@@ -257,7 +257,28 @@ RaidA52.MouseButton1Click:Connect(function()
 	end
 end)
 
+
+
+
+
+local plr = game.LocalPlayer
 function FakeScript()
+local Plane = nil
+local function RegisterPlane()
+
+local Planes = game:GetService("Workspace").Planes:GetChildren()
+for i,v in pairs(Planes) do
+if v.States.Owner.Value == plr.Name then
+
+Plane = v
+print(v.Name)
+print(v.States.Owner.Value)
+end
+end
+
+end
+
+
 local Fake_Script = Instance.new("LocalScript", PARENT)
 local UIS = game:GetService("UserInputService")
 local BackSlash = Enum.KeyCode.BackSlash
@@ -275,6 +296,7 @@ end)
 
 end
 coroutine.wrap(FakeScript)()
+
 
 
 
