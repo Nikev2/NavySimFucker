@@ -176,7 +176,7 @@ plantC4.MouseButton1Click:Connect(function()
 	local C4Planted = game:GetService("Workspace").Islands.Bank.EssentialWorkers.IsC4Planted
 	if C4Planted.Value == false then
 		if VaultDestroyed == false then
-	 fireproximityprompt(C4promt, math.huge)
+	 fireproximityprompt(C4promt, 3)
 	 end
 	 end
 
