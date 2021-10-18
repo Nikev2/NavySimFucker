@@ -263,20 +263,11 @@ end)
 
 local plr = game.Players.LocalPlayer
 function FakeScript()
-local Plane = nil
-local function RegisterPlane()
 
-local Planes = game:GetService("Workspace").Planes:GetChildren()
-for i,v in pairs(Planes) do
-	print(v.States.Owner.Value)
-if v.States.Owner.Value == "PurplePeperEater" then
 
-Plane = v
-print(v.Name)
-end
-end
 
-end
+
+
 
 
 local Fake_Script = Instance.new("LocalScript", PARENT)
@@ -288,7 +279,7 @@ end
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 if BS() then
 	print("BackSlashWasPressed")
-	RegisterPlane()
+
 end
 	
 
