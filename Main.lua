@@ -278,7 +278,12 @@ local function BS()
 end
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 if BS() then
-	print("BackSlashWasPressed")
+	print(ScrollingFrame.Visible)
+	if ScrollingFrame.Visible == true then
+        ScrollingFrame.Visible = false
+	elseif ScrollingFrame.Visible == false then
+			ScrollingFrame.Visible = true
+	end
 
 end
 	
