@@ -318,7 +318,7 @@ if Eq() then
 			RepairT:FireServer(plane)
 			print("Repaired "..(plane.Name))
 			 elseif plane.ClassName == "UnionOperation" then
-			 RepairT:FireServer(Ship)
+			 RepairT:FireServer(plane)
 			print("Repaired "..(plane.Name))
 			
 			elseif plane.ClassName == "WedgePart" then
@@ -326,8 +326,8 @@ if Eq() then
 			print("Repaired"..(plane.Name))
 			
 			elseif plane.ClassName == "CornerWedgePart" then
-			 RepairT:FireServer(Ship)
-			 print("Repaired"..(Ship.Name))
+			 RepairT:FireServer(plane)
+			 print("Repaired"..(plane.Name))
 			
 			elseif plane.ClassName == "MeshPart" then
 			RepairT:FireServer(plane)
