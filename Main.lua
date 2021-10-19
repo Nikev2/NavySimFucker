@@ -1,5 +1,8 @@
 COREGUI = game:GetService("CoreGui")
 PARENT = nil
+function GetPlayerFromSeatWeld(Part1)
+	return Part1.Parent
+end
 local plr = game.Players.LocalPlayer
 function randomString()
 	local length = math.random(10,20)
@@ -256,8 +259,22 @@ RaidA52.MouseButton1Click:Connect(function()
 				end
 	end
 end)
-
-
+local Plane = nil
+local PlayerName = "WindowsXPisathing"
+function RegisterPlane()
+	for i,k in pairs(game:GetService("Workspace").Planes:GetDescendants()) do
+		if k.Name == "SeatWeld" then
+			local Char = GetPlayerFromSeatWeld(k.Part1)
+			if Char.Name == PlayerName then
+				Plane = k.Parent.Parent.Parent
+				print(Plane)
+			    
+		   end
+			end
+			
+		
+	end
+end
 
 
 
@@ -276,6 +293,9 @@ local BackSlash = Enum.KeyCode.BackSlash
 local function BS()
 	return UIS:IsKeyDown(BackSlash)
 end
+local function Eq()
+return UIS:IsKeyDown(Enum.KeyCode.Equals)
+end
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 if BS() then
 	print(ScrollingFrame.Visible)
@@ -287,12 +307,59 @@ if BS() then
 
 end
 	
+if Eq() then
+	local Plr = game.Players.LocalPlayer
+	local b = Plr:FindFirstChild("Backpack")
+	local RepairT = b.Repair.Server.Repair
+	print("Equals")
+	RegisterPlane()
+	for i, plane in pairs(Plane:GetDescendants()) do
+		if plane.ClassName == "Part" then
+			RepairT:FireServer(plane)
+			print("Repaired "..(plane.Name))
+			 elseif plane.ClassName == "UnionOperation" then
+			 RepairT:FireServer(Ship)
+			print("Repaired "..(plane.Name))
+			
+			elseif plane.ClassName == "WedgePart" then
+			 RepairT:FireServer(plane)
+			print("Repaired"..(plane.Name))
+			
+			elseif plane.ClassName == "CornerWedgePart" then
+			 RepairT:FireServer(Ship)
+			 print("Repaired"..(Ship.Name))
+			
+			elseif plane.ClassName == "MeshPart" then
+			RepairT:FireServer(plane)
+			print("Repaired"..(plane.Name))
+			
+		  
+		end
+		 
+		end
+
+
+
+
+	
+end
+
+
+
 
 end)
 
 
+
 end
 coroutine.wrap(FakeScript)()
+
+
+
+
+
+
+
 
 
 
