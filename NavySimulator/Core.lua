@@ -39,8 +39,7 @@ else
 	Main.Parent = COREGUI
 	PARENT = Main
 end
-local ShipNameVal = Instance.new("StringValue")
-ShipNameVal.Parent = ScrollingFrame
+
 
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local SpawnShip = Instance.new("TextButton")
@@ -49,7 +48,8 @@ local UIListLayout = Instance.new("UIListLayout")
 local UnlockShip = Instance.new("TextButton")
 local ShipType = Instance.new("TextBox")
 local RepairShip = Instance.new("TextButton")
-
+local ShipNameVal = Instance.new("StringValue")
+ShipNameVal.Parent = ScrollingFrame
 ScrollingFrame.Parent = PARENT
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
