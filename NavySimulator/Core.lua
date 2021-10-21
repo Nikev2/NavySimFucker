@@ -1,12 +1,8 @@
 COREGUI = game:GetService("CoreGui")
 PARENT = nil
 
-if PARENT.ClassName == "ScreenGui" then
-print("dd")
-PARENT:Destroy()
-PARENT = nil
-end
-wait(1)
+
+
 function GetPlayerFromSeatWeld(Part1)
 	return Part1.Parent
 end
