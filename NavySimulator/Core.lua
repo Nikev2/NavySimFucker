@@ -1,9 +1,6 @@
 COREGUI = game:GetService("CoreGui")
 PARENT = nil
-if PARENT.ScrollingFrame then
-	PARENT.ScrollingFrame:Destroy()
-	print("old frame gone")
-end
+
 if PARENT.ClassName == "ScreenGui" then
 print("dd")
 PARENT:Destroy()
