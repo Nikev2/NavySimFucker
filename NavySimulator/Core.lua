@@ -4,6 +4,12 @@ if PARENT.ScrollingFrame then
 	PARENT.ScrollingFrame:Destroy()
 	print("old frame gone")
 end
+if PARENT.ClassName == "ScreenGui" then
+print("dd")
+PARENT:Destroy()
+PARENT = nil
+end
+wait(1)
 function GetPlayerFromSeatWeld(Part1)
 	return Part1.Parent
 end
