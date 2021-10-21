@@ -2,6 +2,7 @@ COREGUI = game:GetService("CoreGui")
 PARENT = nil
 if PARENT.ScrollingFrame then
 	PARENT.ScrollingFrame:Destroy()
+	print("old frame gone")
 end
 function GetPlayerFromSeatWeld(Part1)
 	return Part1.Parent
