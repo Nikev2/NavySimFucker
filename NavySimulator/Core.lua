@@ -255,7 +255,7 @@ RaidA52.MouseButton1Click:Connect(function()
 	local Area52 = game:GetService("Workspace").Islands["Area 52"].EssentialWorkers
 	for i,v in pairs(Area52:GetDescendants()) do
 			if v.Name == "Prompt" then
-				fireproximityprompt(v, 50)
+				fireproximityprompt(v, 100)
 				print(v.Name)
 				print("C4Planted")
 				 
