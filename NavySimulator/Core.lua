@@ -70,7 +70,7 @@ end
 
 
 
-
+local FireClickDistance = nil
 frame = ScrollingFrame
 frame.Draggable = true
 frame.Active = true
