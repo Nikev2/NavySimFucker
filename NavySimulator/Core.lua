@@ -357,7 +357,24 @@ end)
 end
 coroutine.wrap(FakeScript)()
 
+local KillAllPlaneEngines = CreateGuiElement("TextButton","Kill All Planes", "KillAllPlanes", 10) 
 
+KillAllPlaneEngines.MouseButton1Click:Connect(function()
+
+local Planes = workspace.Planes:GetDescendants()
+
+for i,v in pairs(Planes) do
+
+if v.Name == "SetEngine" then
+	
+	v:FireServer()
+	print("Fired "..(v.Name))
+	print(v.Parent.Parent)
+
+end
+end
+
+end)
 
 
 
