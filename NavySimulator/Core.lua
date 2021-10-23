@@ -367,7 +367,7 @@ for i,v in pairs(Planes) do
 
 if v.Name == "SetEngine" then
 	
-	v:FireServer()
+	v:FireServer(false)
 	print("Fired "..(v.Name))
 	print(v.Parent.Parent)
 
