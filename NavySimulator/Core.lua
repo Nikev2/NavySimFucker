@@ -1,5 +1,5 @@
-local COREGUI = game:GetService("CoreGui")
-local PARENT = nil
+COREGUI = game:GetService("CoreGui")
+PARENT = nil
 
 
 
@@ -250,9 +250,10 @@ ShowPlaneShop.MouseButton1Click:Connect(function()
 	fireclickdetector(PlaneGUIClicker)
 	print("Success")
 end)
-local Prompts = {}
+
 local RaidA52 = CreateGuiElement("TextButton", "Raid A52", "RaidA52", 9)
 RaidA52.MouseButton1Click:Connect(function()
+	local Prompts = {}
 	local Area52 = game:GetService("Workspace").Islands["Area 52"].EssentialWorkers
 	for i,v in pairs(Area52:GetDescendants()) do
 			if v.Name == "Prompt" then
