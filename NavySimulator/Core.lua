@@ -257,16 +257,14 @@ RaidA52.MouseButton1Click:Connect(function()
 	local Area52 = game:GetService("Workspace").Islands["Area 52"].EssentialWorkers
 	for i,v in pairs(Area52:GetDescendants()) do
 			if v.Name == "Prompt" then
-				table.insert(Prompts, v)
-				print(v..(" Got Inserted"))
-				for i,k in next,Prompts do 
-                      if k.Parent.Active.Value == false then
-                           print(k.Name)
-						   fireproximityprompt(k,255)
-						   else
-							print("Active")
-					  end
+				if v.Parent.Active.Value == false then
+                            
+                    print(v.Name)
+					fireproximityprompt(v, 200)
+                      print("planted")
 				end
+				
+			
 			
 				 
 				end
