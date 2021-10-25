@@ -1,5 +1,5 @@
-COREGUI = game:GetService("CoreGui")
-PARENT = nil
+local COREGUI = game:GetService("CoreGui")
+local PARENT = nil
 
 
 
@@ -250,14 +250,23 @@ ShowPlaneShop.MouseButton1Click:Connect(function()
 	fireclickdetector(PlaneGUIClicker)
 	print("Success")
 end)
+local Prompts = {}
 local RaidA52 = CreateGuiElement("TextButton", "Raid A52", "RaidA52", 9)
 RaidA52.MouseButton1Click:Connect(function()
 	local Area52 = game:GetService("Workspace").Islands["Area 52"].EssentialWorkers
 	for i,v in pairs(Area52:GetDescendants()) do
 			if v.Name == "Prompt" then
-				fireproximityprompt(v, 100)
-				print(v.Name)
-				print("C4Planted")
+				table.insert(Prompts, v)
+				print(v..(" Got Inserted"))
+				for i,k in next,Prompts do 
+                      if k.Parent.Active.Value == false then
+                           print(k.Name)
+						   fireproximityprompt(k,255)
+						   else
+							print("Active")
+					  end
+				end
+			
 				 
 				end
 	end
@@ -375,6 +384,8 @@ end
 end
 
 end)
+
+local FireDistance = CreateGuiElement("TextButton","Fire Click Distance", "FCD", 11)
 
 
 
