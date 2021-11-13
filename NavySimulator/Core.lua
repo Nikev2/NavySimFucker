@@ -54,17 +54,32 @@ ScrollingFrame.Size = UDim2.new(0, 216,0, 361)
 
 function CreateGuiElement(Element, Text, Name, LayoutOrder)
 	local X = Instance.new(Element)
-X.Parent = ScrollingFrame
-X.LayoutOrder = LayoutOrder
-X.Name = Name
-X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-X.Size = UDim2.new(0, 170, 0, 50)
-X.Font = Enum.Font.SourceSans
-X.Text = Text
-X.TextColor3 = Color3.fromRGB(0, 0, 0)
-X.TextScaled = true
-X.TextSize = 14.000
-X.TextWrapped = true
+	
+	X.Parent = script.Parent
+	if LayoutOrder == nil then
+	else
+		X.LayoutOrder = LayoutOrder
+	end
+
+	if Name == nil then
+		else
+		X.Name = Name
+	end
+	if Text == nil then
+	else
+		X.TextColor3 = Color3.fromRGB(0, 0, 0)
+		X.TextScaled = true
+		X.TextSize = 14.000
+		X.TextWrapped = true
+		X.Text = Text
+		X.Font = Enum.Font.SourceSans
+	end
+	X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	X.Size = UDim2.new(0, 170, 0, 50)
+	
+	
+	
+	
 	return X
 end
 
@@ -149,7 +164,7 @@ RepairShip.TextColor3 = Color3.fromRGB(0, 0, 0)
 RepairShip.TextScaled = true
 RepairShip.TextSize = 14.000
 RepairShip.TextWrapped = true
-RepairShip.MouseButton1Click:Connect(function()
+function RepairShip1()
 	local ShipData = workspace.Ships:FindFirstChild(ShipNameVal.Value):GetDescendants()
 	local Plr = game.Players.LocalPlayer
 	local b = Plr:FindFirstChild("Backpack")
@@ -178,6 +193,9 @@ RepairShip.MouseButton1Click:Connect(function()
 		end
 		 
 		end
+end
+RepairShip.MouseButton1Click:Connect(function()
+RepairShip1()
 end)
 SpawnShip.MouseButton1Click:Connect(function()
 	ShipNameVal.Value = ShipName.Text
@@ -384,10 +402,55 @@ end
 
 end)
 
+function ConstantRepair(BoolVal)
+repeat
+wait(0.1)
+RepairShip1()
+until BoolVal.Value == false
+end
+
+
+
 local FireDistance = CreateGuiElement("TextButton","Fire Click Distance", "FCD", 11)
 
 
+local IndustructibleShip = CreateGuiElement("Frame", nil, "Frame", 11)
+IndustructibleShip.Parent = ScrollingFrame
 
+local Bool1 = Instance.new("BoolValue", IndustructibleShip)
+Bool1.Value = false
+local T = Instance.new("TextButton")
+T.Parent = IndustructibleShip
+T.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T.Position = UDim2.new(0.482352942, 0, 0, 0)
+T.Size = UDim2.new(0, 88, 0, 50)
+T.Font = Enum.Font.SourceSans
+T.Text = "True"
+T.TextColor3 = Color3.fromRGB(0, 0, 0)
+T.TextSize = 14.000
+local F = Instance.new("TextButton")
+F.Parent = IndustructibleShip
+F.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+F.Position = UDim2.new(0.482352942, 0, 0, 0)
+F.Size = UDim2.new(0, 88, 0, 50)
+F.Font = Enum.Font.SourceSans
+F.Text = "False"
+F.TextColor3 = Color3.fromRGB(0, 0, 0)
+F.TextSize = 14.000
+local RTT = Instance.new("UIListLayout")
+RTT.Parent = IndustructibleShip
+RTT.FillDirection = Enum.FillDirection.Horizontal
+T.MouseButton1Click:Connect(function()
+	T.BackgroundColor = BrickColor.Green()
+	F.BackgroundColor = BrickColor.White()
+	Bool1.Value = true
+	ConstantRepair(Bool1)
+end)
+F.MouseButton1Click:Connect(function()
+	F.BackgroundColor = BrickColor.Green()
+	T.BackgroundColor = BrickColor.White()
+	Bool1.Value = false
+end)
 
 
 
