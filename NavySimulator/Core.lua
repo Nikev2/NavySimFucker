@@ -84,7 +84,12 @@ function CreateGuiElement(Element, Text, Name, LayoutOrder)
 end
 
 
-
+local ShowPlaneShop = CreateGuiElement("TextButton", "Show Plane Shop", "ShowPlaneShop", 8)
+ShowPlaneShop.MouseButton1Click:Connect(function()
+	local PlaneGUIClicker = game:GetService("Workspace").Islands.PirateSpawn.EssentialWorkers.PlaneShop.Clicker
+	fireclickdetector(PlaneGUIClicker)
+	print("Success")
+end)
 local FireClickDistance = nil
 frame = ScrollingFrame
 frame.Draggable = true
@@ -262,12 +267,7 @@ if VaultDestroyed.Value == true then
 end
 end)
 
-local ShowPlaneShop = CreateGuiElement("TextButton", "Show Plane Shop", "ShowPlaneShop", 8)
-ShowPlaneShop.MouseButton1Click:Connect(function()
-	local PlaneGUIClicker = game:GetService("Workspace").Islands.PirateSpawn.EssentialWorkers.PlaneShop.Clicker
-	fireclickdetector(PlaneGUIClicker)
-	print("Success")
-end)
+
 
 local RaidA52 = CreateGuiElement("TextButton", "Raid A52", "RaidA52", 9)
 RaidA52.MouseButton1Click:Connect(function()
