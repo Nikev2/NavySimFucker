@@ -55,7 +55,7 @@ ScrollingFrame.Size = UDim2.new(0, 216,0, 361)
 function CreateGuiElement(Element, Text, Name, LayoutOrder)
 	local X = Instance.new(Element)
 	
-	X.Parent = script.Parent
+	X.Parent = ScrollingFrame
 	if LayoutOrder == nil then
 	else
 		X.LayoutOrder = LayoutOrder
